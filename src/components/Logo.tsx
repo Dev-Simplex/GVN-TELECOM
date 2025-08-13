@@ -33,14 +33,9 @@ const Logo: React.FC<LogoProps> = ({
 
   // Escolher a versão do logo baseado na variante
   const getLogoSrc = () => {
-    const logoSrc = variant === 'white' 
+    return variant === 'white' 
       ? '/assets/images/gvn_logo_white.svg'
       : '/assets/images/gvn_logo.svg';
-    
-    // Debug: verificar se a imagem está carregando
-    console.log('Logo src:', logoSrc);
-    
-    return logoSrc;
   };
 
   return (
