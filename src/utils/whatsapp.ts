@@ -90,3 +90,31 @@ export const getCurrentWhatsAppNumber = () => {
 export const resetWhatsAppCounter = () => {
   localStorage.setItem('whatsappCounter', '0');
 };
+
+// Função para WhatsApp de cobertura
+export const openWhatsAppCoverage = () => {
+  const phoneNumber = getNextPhoneNumber();
+  
+  const message = `Olá! Gostaria de verificar a disponibilidade da GVN Telecom em minha cidade.
+
+🗺️ *CONSULTA DE COBERTURA*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Atendemos 26 estados + DF
+🏢 Cobertura nacional (exceto Roraima)
+🏙️ Mais de 5.000 municípios
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Por favor, me informe sobre a disponibilidade em minha região e como posso contratar o serviço.`;
+  
+  // Usar uma abordagem mais simples para garantir compatibilidade
+  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
+  
+  // Abrir em nova aba
+  const newWindow = window.open(whatsappUrl, '_blank');
+  
+  // Fallback se popup for bloqueado
+  if (!newWindow) {
+    window.location.href = whatsappUrl;
+  }
+};

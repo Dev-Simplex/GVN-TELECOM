@@ -1,6 +1,5 @@
 import React from 'react';
-import { Mail, MessageCircle, MapPin, Phone } from 'lucide-react';
-import { openWhatsAppGeneral } from '../utils/whatsapp';
+import { Mail, MessageCircle, MapPin } from 'lucide-react';
 import Logo from './Logo';
 
 // Função para abrir WhatsApp para número específico
@@ -66,7 +65,7 @@ const Footer: React.FC = () => {
               
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
-                contato@gvntelecom.com.br
+                gvntelecomsinop@gmail.com
               </div>
               
             

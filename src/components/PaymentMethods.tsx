@@ -12,7 +12,7 @@ const PaymentMethods: React.FC = () => {
     {
       icon: FileText,
       name: 'Boleto Bancário',
-      description: 'Vencimento em 30 dias, sem taxas adicionais',
+      description: 'Pagamentos Mensal e com facilidade de entrega do Boleto.',
       color: 'bg-orange-100 text-orange-600'
     }
   ];

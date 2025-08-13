@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animações personalizadas */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Melhorias para o mapa */
+.map-point {
+  transition: all 0.3s ease;
+}
+
+.map-point:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* Estados cobertos */
+.state-covered {
+  transition: all 0.3s ease;
+}
+
+.state-covered:hover {
+  filter: brightness(1.1);
+  stroke-width: 2;
+}
+
+/* Estado não coberto */
+.state-not-covered {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.state-not-covered:hover {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+/* Legenda */
+.legend text {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}

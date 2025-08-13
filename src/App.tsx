@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
+import CoverageSection from './components/CoverageSection';
 import Plans from './components/Plans';
 import PaymentMethods from './components/PaymentMethods';
 import Contact from './components/Contact';
@@ -21,6 +22,7 @@ function App() {
           <>
             <Hero />
             <Benefits />
+            <CoverageSection />
             <Plans />
             <PaymentMethods />
             <Contact />

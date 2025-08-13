@@ -67,6 +67,47 @@ const Hero: React.FC = () => {
               </p>
             </div>
           </div>
+
+          {/* Seção de Cobertura Nacional */}
+          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Atendemos a Nível Brasil
+              </h3>
+              <p className="text-purple-100">
+                Consulte a disponibilidade em sua cidade
+              </p>
+            </div>
+            
+                         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+               <div className="flex items-center space-x-2 text-purple-100">
+                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                 <span className="text-sm font-medium">26 Estados + DF</span>
+               </div>
+              <div className="flex items-center space-x-2 text-purple-100">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">5.000+ Municípios</span>
+              </div>
+              <div className="flex items-center space-x-2 text-purple-100">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Cobertura Nacional</span>
+              </div>
+            </div>
+            
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => {
+                  const coverageSection = document.getElementById('coverage');
+                  if (coverageSection) {
+                    coverageSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors border border-white/30"
+              >
+                Verificar Disponibilidade
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

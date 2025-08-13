@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">E-mail</h4>
-                <p className="text-lg text-gray-600 mb-1">contato@gvntelecom.com.br</p>
+                <p className="text-lg text-gray-600 mb-1">gvntelecomsinop@gmail.com</p>
                 <p className="text-sm text-gray-500">Resposta em até 24h</p>
               </div>
             </div>

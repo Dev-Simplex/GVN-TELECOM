@@ -69,7 +69,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
             Sobre a GVN Telecom
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
-            Especialistas em telefonia SIP em Sinop - MT, oferecendo soluções 
+            Especialistas em telefonia SIP para sua Empresa, oferecendo soluções 
             completas para empresas com tecnologia de ponta e suporte local.
           </p>
         </div>
