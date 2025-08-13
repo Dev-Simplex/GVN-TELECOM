@@ -186,7 +186,7 @@ const Plans: React.FC = () => {
                 Ramal Adicional
               </h4>
               <p className="text-2xl font-bold text-purple-600 mb-2">
-                R$ 35,00/mês
+                R$ 25,00/mês
               </p>
               <p className="text-gray-600">
                 Adicione ramais extras ao seu PABX
