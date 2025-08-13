@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 // Função para abrir WhatsApp para número específico
 const openWhatsAppForNumber = (phoneNumber: string, name: string) => {
-  const message = `Olá ${name}! Gostaria de saber mais sobre os planos da GVN Telecom.`;
+  const message = `Olá ${name}! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?`;
   const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
   
@@ -28,6 +28,7 @@ const Footer: React.FC = () => {
               Soluções completas em telefonia IP para empresas de todos os tamanhos. 
               Qualidade, confiabilidade e suporte especializado.
             </p>
+            <p className="text-gray-400">CNPJ: 47.761.233/0001-70</p>
           </div>
 
           {/* Services */}

@@ -19,7 +19,7 @@ const getNextPhoneNumber = () => {
 export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: number) => {
   const phoneNumber = getNextPhoneNumber();
   
-  let message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
+  let message = 'Olá! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?';
   
   if (planName && planPrice && planLines) {
     // Calcular taxa de adesão baseada no número de linhas
@@ -34,16 +34,12 @@ export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: 
       default: adesao = planPrice * 2;
     }
     
-    message = `Olá! Gostaria de contratar o ${planName} da GVN Telecom.
+    message = `- Olá! Vi no site e Gostaria de contratar o plano de ${planLines} Linhas da GVN Telecom.
+- ${planLines} linhas SIP
+- R$ ${planPrice}/mês
+- Taxa de adesão: R$ ${adesao}
 
-📋 *DETALHES DO PLANO*
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📞 ${planLines} linha${planLines > 1 ? 's' : ''} SIP
-💰 R$ ${planPrice}/mês
-💳 Taxa de adesão: R$ ${adesao}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Por favor, me informe sobre o processo de contratação.`;
+O que preciso ?`;
   }
   
   // Usar uma abordagem mais simples para garantir compatibilidade
@@ -63,7 +59,7 @@ Por favor, me informe sobre o processo de contratação.`;
 export const openWhatsAppGeneral = () => {
   const phoneNumber = getNextPhoneNumber();
   
-  const message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
+  const message = 'Olá! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?';
   
   // Usar uma abordagem mais simples para garantir compatibilidade
   const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
@@ -95,16 +91,7 @@ export const resetWhatsAppCounter = () => {
 export const openWhatsAppCoverage = () => {
   const phoneNumber = getNextPhoneNumber();
   
-  const message = `Olá! Gostaria de verificar a disponibilidade da GVN Telecom em minha cidade.
-
-🗺️ *CONSULTA DE COBERTURA*
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Atendemos 26 estados + DF
-🏢 Cobertura nacional (exceto Roraima)
-🏙️ Mais de 5.000 municípios
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Por favor, me informe sobre a disponibilidade em minha região e como posso contratar o serviço.`;
+  const message = `Olá! Vi no site e Gostaria de verificar a cobertura da GVN Telecom.\n\nO que preciso ?`;
   
   // Usar uma abordagem mais simples para garantir compatibilidade
   const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
