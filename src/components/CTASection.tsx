@@ -47,15 +47,15 @@ const CTASection: React.FC = () => {
           </div>
         </div>
 
-                 <div className="flex justify-center">
-           <button
-             onClick={openWhatsAppGeneral}
-             className="bg-white text-purple-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group"
-           >
-             <MessageCircle className="h-5 w-5 mr-2" />
-             Falar com Especialista
-           </button>
-         </div>
+        <div className="flex justify-center">
+          <button
+            onClick={openWhatsAppGeneral}
+            className="bg-white text-purple-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group"
+          >
+            <MessageCircle className="h-5 w-5 mr-2" />
+            Falar com Especialista
+          </button>
+        </div>
 
         <div className="mt-8 text-purple-200">
           <p className="text-sm">
