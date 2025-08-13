@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 mb-8 max-w-3xl mx-auto">
             Serviço Global Voz Negócio - Telefonia SIP com ligações ilimitadas, 
-            suporte direto WhatsApp e melhor qualidade do mercado em Sinop - MT
+            suporte direto WhatsApp e melhor qualidade de Atendimento
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
