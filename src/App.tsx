@@ -1,0 +1,42 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Benefits from './components/Benefits';
+import Plans from './components/Plans';
+import PaymentMethods from './components/PaymentMethods';
+import Contact from './components/Contact';
+import CTASection from './components/CTASection';
+import Footer from './components/Footer';
+import AboutPage from './pages/AboutPage';
+
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'about':
+        return <AboutPage onBack={() => setCurrentPage('home')} />;
+      default:
+        return (
+          <>
+            <Hero />
+            <Benefits />
+            <Plans />
+            <PaymentMethods />
+            <Contact />
+            <CTASection />
+          </>
+        );
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+      {renderPage()}
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
