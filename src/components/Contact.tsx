@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
                 <h4 className="text-xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors mb-2">
                   WhatsApp
                 </h4>
-                <p className="text-lg text-gray-600 mb-1">(66) 8 4222-2224</p>
+                <p className="text-lg text-gray-600 mb-1">(66) 8422-2224</p>
                 <p className="text-sm text-gray-500">Atendimento direto 24h</p>
                 <p className="text-xs text-green-600 mt-2 font-medium">Clique para conversar →</p>
               </div>
@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Telefone</h4>
-                <p className="text-lg text-gray-600 mb-1">(66) 8 4222-2224</p>
+                <p className="text-lg text-gray-600 mb-1">(66) 8422-2224</p>
                 <p className="text-sm text-gray-500">Seg a Sex, 8h às 18h</p>
               </div>
             </div>

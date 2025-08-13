@@ -1,6 +1,6 @@
 // Função para abrir WhatsApp com mensagem personalizada
 export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: number) => {
-  const phoneNumber = '5566996822686'; // Número da GVN Telecom
+  const phoneNumber = '556684222224'; // Número da GVN Telecom
   
   let message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
   
@@ -44,7 +44,7 @@ Por favor, me informe sobre o processo de contratação.`;
 
 // Função para WhatsApp geral
 export const openWhatsAppGeneral = () => {
-  const phoneNumber = '5566996822686'; // Número da GVN Telecom
+  const phoneNumber = '556684222224'; // Número da GVN Telecom
   const message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
   
   // Usar uma abordagem mais simples para garantir compatibilidade
