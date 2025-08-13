@@ -3,6 +3,18 @@ import { Mail, MessageCircle, MapPin, Phone } from 'lucide-react';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 import Logo from './Logo';
 
+// Função para abrir WhatsApp para número específico
+const openWhatsAppForNumber = (phoneNumber: string, name: string) => {
+  const message = `Olá ${name}! Gostaria de saber mais sobre os planos da GVN Telecom.`;
+  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
+  
+  const newWindow = window.open(whatsappUrl, '_blank');
+  if (!newWindow) {
+    window.location.href = whatsappUrl;
+  }
+};
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white">
@@ -34,24 +46,31 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contato</h3>
             <div className="space-y-3">
+              {/* WhatsApp Viviane */}
               <button 
-                onClick={openWhatsAppGeneral}
+                onClick={() => openWhatsAppForNumber('5566997182800', 'Viviane')}
                 className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <MessageCircle className="h-4 w-4 mr-2" />
-                (66) 8 4222-2224
+                WhatsApp - Viviane
               </button>
+              
+              {/* WhatsApp Edgar */}
+              <button 
+                onClick={() => openWhatsAppForNumber('5566984222224', 'Edgar')}
+                className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4 mr-2" />
+                WhatsApp - Edgar
+              </button>
+              
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
                 contato@gvntelecom.com.br
               </div>
-              <a 
-                href="tel:66842222224"
-                className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                <Phone className="h-4 w-4 mr-2" />
-                (66) 8 4222-2224
-              </a>
+              
+            
+              
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-2" />
                 Sinop - MT

@@ -1,6 +1,23 @@
+// Função para obter o próximo número da fila
+const getNextPhoneNumber = () => {
+  // Array com dois números de contato
+  const phoneNumbers = ['5566997182800', '5566984222224']; // Viviane, Edgar
+  
+  // Pegar o contador atual do localStorage
+  const currentCount = parseInt(localStorage.getItem('whatsappCounter') || '0');
+  
+  // Calcular o próximo índice (0 ou 1)
+  const nextIndex = currentCount % 2;
+  
+  // Incrementar o contador para o próximo usuário
+  localStorage.setItem('whatsappCounter', (currentCount + 1).toString());
+  
+  return phoneNumbers[nextIndex];
+};
+
 // Função para abrir WhatsApp com mensagem personalizada
 export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: number) => {
-  const phoneNumber = '556684222224'; // Número da GVN Telecom
+  const phoneNumber = getNextPhoneNumber();
   
   let message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
   
@@ -44,7 +61,8 @@ Por favor, me informe sobre o processo de contratação.`;
 
 // Função para WhatsApp geral
 export const openWhatsAppGeneral = () => {
-  const phoneNumber = '556684222224'; // Número da GVN Telecom
+  const phoneNumber = getNextPhoneNumber();
+  
   const message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
   
   // Usar uma abordagem mais simples para garantir compatibilidade
@@ -58,4 +76,17 @@ export const openWhatsAppGeneral = () => {
   if (!newWindow) {
     window.location.href = whatsappUrl;
   }
+};
+
+// Função para obter o número atual (opcional, para debug)
+export const getCurrentWhatsAppNumber = () => {
+  const phoneNumbers = ['5566997182800', '5566984222224']; // Viviane, Edgar
+  const currentCount = parseInt(localStorage.getItem('whatsappCounter') || '0');
+  const currentIndex = currentCount % 2;
+  return phoneNumbers[currentIndex];
+};
+
+// Função para resetar o contador (opcional, para debug)
+export const resetWhatsAppCounter = () => {
+  localStorage.setItem('whatsappCounter', '0');
 };
