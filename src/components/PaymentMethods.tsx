@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, Smartphone, FileText, Shield } from 'lucide-react';
+import { Smartphone, FileText, Shield } from 'lucide-react';
 
 const PaymentMethods: React.FC = () => {
   const methods = [
@@ -8,12 +8,6 @@ const PaymentMethods: React.FC = () => {
       name: 'PIX',
       description: 'Pagamento instantâneo via PIX, disponível 24h',
       color: 'bg-green-100 text-green-600'
-    },
-    {
-      icon: CreditCard,
-      name: 'Cartão de Crédito',
-      description: 'Parcelamento em até 12x sem juros',
-      color: 'bg-blue-100 text-blue-600'
     },
     {
       icon: FileText,
@@ -31,11 +25,11 @@ const PaymentMethods: React.FC = () => {
             Formas de Pagamento
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Aceitamos diversas formas de pagamento para sua comodidade
+            Aceitamos PIX e Boleto para sua comodidade
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {methods.map((method, index) => (
             <div
               key={index}
