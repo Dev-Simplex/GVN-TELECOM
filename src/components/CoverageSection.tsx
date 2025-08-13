@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, MessageCircle, CheckCircle } from 'lucide-react';
+import { MapPin, CheckCircle } from 'lucide-react';
+import whatsappWhite from '/assets/images/whatsapp-svgrepo-branca.svg';
 import BrazilCoverageMap from './BrazilCoverageMap';
 import { openWhatsAppCoverage } from '../utils/whatsapp';
 
@@ -50,16 +51,17 @@ const CoverageSection: React.FC = () => {
 							</div>
 						</div>
 
-						<div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 text-white">
+                        <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 text-white">
 							<div className="text-center">
-								<MessageCircle className="h-12 w-12 mx-auto mb-4" />
+                                <img src={whatsappWhite} alt="WhatsApp" className="h-12 w-12 mx-auto mb-4" />
 								<h3 className="text-xl font-bold mb-2">Verifique a Disponibilidade</h3>
 								<p className="text-purple-100 mb-6">Fale agora com um especialista e confirme a disponibilidade na sua cidade.</p>
 								<button
 									onClick={openWhatsAppCoverage}
-									className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                                    className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors inline-flex items-center"
 								>
-									Consultar Disponibilidade
+                                    <img src={whatsappWhite} alt="WhatsApp" className="h-5 w-5 mr-2" />
+                                    Consultar Disponibilidade
 								</button>
 							</div>
 						</div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+// Ícone WhatsApp (SVG) - branco
+import whatsappWhite from '/assets/images/whatsapp-svgrepo-branca.svg';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 import Logo from './Logo';
 
@@ -91,8 +93,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <div className="hidden md:flex">
             <button
               onClick={openWhatsAppGeneral}
-              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors inline-flex items-center"
             >
+              <img src={whatsappWhite} alt="WhatsApp" className="h-4 w-4 mr-2" />
               Fale Conosco
             </button>
           </div>
@@ -137,8 +140,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               ))}
               <button
                 onClick={openWhatsAppGeneral}
-                className="block bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center mt-2 w-full"
+                className="block bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center mt-2 w-full inline-flex items-center justify-center"
               >
+                <FaWhatsapp className="h-4 w-4 mr-2 text-white" />
                 Fale Conosco
               </button>
             </div>

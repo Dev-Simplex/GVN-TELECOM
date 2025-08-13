@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import whatsappGreen from '/assets/images/Digital_Glyph_Green.svg';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 
 const Contact: React.FC = () => {
@@ -24,7 +25,7 @@ const Contact: React.FC = () => {
               aria-label="Abrir conversa no WhatsApp"
             >
               <div className="bg-green-100 p-4 rounded-full mr-6">
-                <MessageCircle className="h-8 w-8 text-green-600" />
+                <img src={whatsappGreen} alt="WhatsApp" className="h-8 w-8" />
               </div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors mb-2">

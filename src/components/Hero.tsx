@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight, Phone, Users, Shield } from 'lucide-react';
+import whatsappWhite from '/assets/images/whatsapp-svgrepo-branca.svg';
+import whatsappPurple from '/assets/images/whatsapp-svgrepo-roxa.svg';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 
 const Hero: React.FC = () => {
@@ -32,9 +34,13 @@ const Hero: React.FC = () => {
             </button>
             <button
               onClick={openWhatsAppGeneral}
-              className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-purple-900 transition-colors"
+              className="group border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-purple-900 transition-colors inline-flex items-center justify-center"
               aria-label="Falar com Especialista no WhatsApp"
             >
+              <span className="relative mr-2 h-5 w-5">
+                <img src={whatsappWhite} alt="WhatsApp" className="absolute inset-0 h-5 w-5 group-hover:hidden" />
+                <img src={whatsappPurple} alt="WhatsApp" className="absolute inset-0 h-5 w-5 hidden group-hover:block" />
+              </span>
               Falar com Especialista
             </button>
           </div>

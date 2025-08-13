@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Phone, Zap } from 'lucide-react';
+import { Phone, Zap } from 'lucide-react';
+import whatsappGreen from '/assets/images/whatsapp-svgrepo-branca.svg';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 
 const CTASection: React.FC = () => {
@@ -38,7 +39,7 @@ const CTASection: React.FC = () => {
           </div>
           <div className="text-center">
             <div className="bg-purple-800 rounded-full p-4 w-16 h-16 mx-auto mb-4">
-              <MessageCircle className="h-8 w-8" />
+              <img src={whatsappGreen} alt="WhatsApp" className="h-8 w-8" />
             </div>
             <h3 className="text-lg font-semibold mb-2">WhatsApp Direto</h3>
             <p className="text-purple-200">
@@ -52,7 +53,7 @@ const CTASection: React.FC = () => {
             onClick={openWhatsAppGeneral}
             className="bg-white text-purple-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group"
           >
-            <MessageCircle className="h-5 w-5 mr-2" />
+            <img src={whatsappGreen} alt="WhatsApp" className="h-5 w-5 mr-2" />
             Falar com Especialista
           </button>
         </div>

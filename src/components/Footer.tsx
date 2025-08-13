@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, MessageCircle, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import whatsappWhite from '/assets/images/whatsapp-svgrepo-branca.svg';
 import Logo from './Logo';
 
 // Função para abrir WhatsApp para número específico
@@ -51,7 +52,20 @@ const Footer: React.FC = () => {
                 className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
                 aria-label="Falar no WhatsApp com Viviane"
               >
-                <MessageCircle className="h-4 w-4 mr-2" />
+                <span
+                  className="mr-2 inline-block h-4 w-4 bg-current"
+                  style={{
+                    WebkitMaskImage: `url(${whatsappWhite})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'center',
+                    WebkitMaskSize: 'contain',
+                    maskImage: `url(${whatsappWhite})`,
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    maskSize: 'contain'
+                  }}
+                  aria-hidden="true"
+                />
                 WhatsApp - Viviane
               </button>
               
@@ -60,7 +74,20 @@ const Footer: React.FC = () => {
                 className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
                 aria-label="Falar no WhatsApp com Edgar"
               >
-                <MessageCircle className="h-4 w-4 mr-2" />
+                <span
+                  className="mr-2 inline-block h-4 w-4 bg-current"
+                  style={{
+                    WebkitMaskImage: `url(${whatsappWhite})`,
+                    WebkitMaskRepeat: 'no-repeat',
+                    WebkitMaskPosition: 'center',
+                    WebkitMaskSize: 'contain',
+                    maskImage: `url(${whatsappWhite})`,
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    maskSize: 'contain'
+                  }}
+                  aria-hidden="true"
+                />
                 WhatsApp - Edgar
               </button>
               
