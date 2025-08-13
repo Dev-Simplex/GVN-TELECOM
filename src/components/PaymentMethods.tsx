@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, Smartphone, FileText } from 'lucide-react';
+import { CreditCard, Smartphone, FileText, Shield } from 'lucide-react';
 
 const PaymentMethods: React.FC = () => {
   const methods = [
@@ -31,7 +31,7 @@ const PaymentMethods: React.FC = () => {
             Formas de Pagamento
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Escolha a forma de pagamento que melhor se adapta à sua empresa
+            Aceitamos diversas formas de pagamento para sua comodidade
           </p>
         </div>
 
@@ -56,12 +56,16 @@ const PaymentMethods: React.FC = () => {
 
         <div className="mt-12 text-center">
           <div className="bg-purple-50 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-purple-900 mb-4">
-              Segurança Garantida
-            </h3>
+            <div className="flex items-center justify-center mb-4">
+              <Shield className="h-8 w-8 text-purple-600 mr-3" />
+              <h3 className="text-xl font-bold text-purple-900">
+                Pagamento Seguro
+              </h3>
+            </div>
             <p className="text-purple-700">
-              Todos os pagamentos são processados com segurança através de 
-              gateway certificado PCI DSS, garantindo a proteção dos seus dados.
+              Todos os pagamentos são processados diretamente pela GVN Telecom com 
+              total segurança e transparência. Entre em contato via WhatsApp para 
+              finalizar sua contratação.
             </p>
           </div>
         </div>
