@@ -15,29 +15,44 @@ const Logo: React.FC<LogoProps> = ({
 }) => {
   const sizeClasses = {
     sm: 'h-8',
-    md: 'h-12',
-    lg: 'h-16'
+    md: 'h-10',
+    lg: 'h-14'
   };
 
   const textSizes = {
     sm: 'text-sm',
-    md: 'text-xl',
-    lg: 'text-2xl'
+    md: 'text-lg',
+    lg: 'text-xl'
+  };
+
+  const subtitleSizes = {
+    sm: 'text-xs',
+    md: 'text-sm',
+    lg: 'text-base'
+  };
+
+  // Escolher a versão do logo baseado na variante
+  const getLogoSrc = () => {
+    if (variant === 'white') {
+      return '/assets/images/gvn_logo_white.svg';
+    } else {
+      return '/assets/images/gvn_logo.svg'; // Versão roxa para o cabeçalho
+    }
   };
 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/assets/images/transparent_logo.png" 
+        src={getLogoSrc()} 
         alt="GVN Telecom" 
-        className={`${sizeClasses[size]} w-auto`}
+        className={`${sizeClasses[size]} w-auto object-contain`}
       />
       {showText && (
-        <div className="ml-3">
-          <h1 className={`${textSizes[size]} font-bold ${variant === 'white' ? 'text-white' : 'text-gray-900'}`}>
+        <div className="ml-2 flex flex-col">
+          <h1 className={`${textSizes[size]} font-bold leading-tight ${variant === 'white' ? 'text-white' : 'text-gray-900'}`}>
             GVN Telecom
           </h1>
-          <p className={`text-xs ${variant === 'white' ? 'text-purple-300' : 'text-purple-600'} ${size === 'lg' ? 'text-sm' : ''}`}>
+          <p className={`${subtitleSizes[size]} font-medium leading-tight ${variant === 'white' ? 'text-purple-300' : 'text-purple-600'}`}>
             Telefonia SIP
           </p>
         </div>

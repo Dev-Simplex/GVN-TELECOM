@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             className="cursor-pointer"
             onClick={() => onNavigate('home')}
           >
-            <Logo size="md" />
+            <Logo size="lg" />
           </div>
 
           {/* Desktop Navigation */}

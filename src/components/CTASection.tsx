@@ -59,7 +59,7 @@ const CTASection: React.FC = () => {
 
         <div className="mt-8 text-purple-200">
           <p className="text-sm">
-            📍 R Tancredo Neves 211, Jd Itália, Sinop - MT | 📞 (66) 9 9846-0222
+            📍 R Tancredo Neves 211, Jd Itália, Sinop - MT | 📞 (66) 8 4222-2224
           </p>
         </div>
       </div>
