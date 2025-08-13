@@ -1,4 +1,6 @@
 import React from 'react';
+import logoSrc from '/assets/images/gvn_logo.svg';
+import logoWhiteSrc from '/assets/images/gvn_logo_white.svg';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -33,9 +35,11 @@ const Logo: React.FC<LogoProps> = ({
 
   // Escolher a versão do logo baseado na variante
   const getLogoSrc = () => {
-    return variant === 'white' 
-      ? '/assets/images/gvn_logo_white.svg'
-      : '/assets/images/gvn_logo.svg';
+    if (variant === 'white') {
+      return logoWhiteSrc;
+    } else {
+      return logoSrc;
+    }
   };
 
   return (
@@ -44,11 +48,6 @@ const Logo: React.FC<LogoProps> = ({
         src={getLogoSrc()} 
         alt="GVN Telecom" 
         className={`${sizeClasses[size]} w-auto object-contain`}
-        onError={(e) => {
-          console.error('Erro ao carregar logo:', e);
-          // Fallback para texto se a imagem falhar
-          e.currentTarget.style.display = 'none';
-        }}
       />
       {showText && (
         <div className="ml-2 flex flex-col">

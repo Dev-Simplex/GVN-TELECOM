@@ -1,9 +1,0 @@
-# Excluir a pasta assets original, já que movemos para public/
-assets/
-
-# Outros arquivos que não precisam ser enviados
-node_modules/
-.git/
-.gitignore
-README.md
-*.log
