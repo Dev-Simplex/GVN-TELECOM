@@ -10,13 +10,24 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
   const navLinks = [
     { id: 'home', label: 'Início', action: 'home' as const },
     { id: 'plans', label: 'Planos', action: 'scroll' as const },
     { id: 'clients', label: 'Clientes', action: 'scroll' as const },
-    { id: 'contact', label: 'Contato', action: 'scroll' as const }
+    { id: 'contact', label: 'Contato', action: 'scroll' as const },
+    { id: 'about', label: 'Sobre Nós', action: 'about' as const }
   ];
+
+  React.useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const doScroll = () => {
@@ -34,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className={`${isScrolled ? 'bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm' : 'bg-transparent'} sticky top-0 z-50 transition-colors`}> 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -63,11 +74,13 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   if (item.action === 'home') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     if (currentPage !== 'home') onNavigate('home');
-                  } else {
+                  } else if (item.action === 'scroll') {
                     scrollToSection(item.id);
+                  } else if (item.action === 'about') {
+                    onNavigate('about');
                   }
                 }}
-                className={`px-3 py-2 text-sm font-medium transition-colors text-gray-700 hover:text-purple-600`}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors text-gray-800 hover:text-purple-700 after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300`}
               >
                 {item.label}
               </button>
@@ -110,12 +123,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                     if (item.action === 'home') {
                       onNavigate('home');
                       setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-                    } else {
+                    } else if (item.action === 'scroll') {
                       scrollToSection(item.id);
+                    } else if (item.action === 'about') {
+                      onNavigate('about');
                     }
                     setIsMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors text-gray-700 hover:text-purple-600 hover:bg-purple-50`}
+                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors text-gray-800 hover:text-purple-700 hover:bg-purple-50`}
                 >
                   {item.label}
                 </button>
