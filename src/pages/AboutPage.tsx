@@ -203,7 +203,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
           </h2>
           <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
             Entre em contato conosco e descubra como podemos ajudar sua empresa 
-            com soluções de telefonia SIP em Sinop - MT.
+            com soluções de telefonia SIP para sua Empresa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
