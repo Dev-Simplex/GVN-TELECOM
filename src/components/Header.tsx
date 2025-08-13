@@ -11,10 +11,27 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const navItems = [
-    { id: 'home', label: 'Início' },
-    { id: 'about', label: 'Sobre Nós' }
+  const navLinks = [
+    { id: 'home', label: 'Início', action: 'home' as const },
+    { id: 'plans', label: 'Planos', action: 'scroll' as const },
+    { id: 'clients', label: 'Clientes', action: 'scroll' as const },
+    { id: 'contact', label: 'Contato', action: 'scroll' as const }
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const doScroll = () => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    if (currentPage !== 'home') {
+      onNavigate('home');
+      setTimeout(doScroll, 100);
+    } else {
+      doScroll();
+    }
+  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -23,22 +40,34 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           {/* Logo */}
           <div 
             className="cursor-pointer"
-            onClick={() => onNavigate('home')}
+            onClick={() => {
+              if (currentPage !== 'home') {
+                onNavigate('home');
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            aria-label="Voltar ao topo"
+            role="button"
           >
             <Logo size="lg" />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+          <nav className="hidden md:flex space-x-8" aria-label="Navegação principal">
+            {navLinks.map((item) => (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  currentPage === item.id
-                    ? 'text-purple-600 border-b-2 border-purple-600'
-                    : 'text-gray-700 hover:text-purple-600'
-                }`}
+                onClick={() => {
+                  if (item.action === 'home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (currentPage !== 'home') onNavigate('home');
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
+                className={`px-3 py-2 text-sm font-medium transition-colors text-gray-700 hover:text-purple-600`}
               >
                 {item.label}
               </button>
@@ -46,18 +75,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           </nav>
 
           {/* Contact Buttons */}
-          <div className="hidden md:flex space-x-4">
-            <button
-              onClick={() => {
-                const plansSection = document.getElementById('plans');
-                if (plansSection) {
-                  plansSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-purple-100 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors font-medium"
-            >
-              Ver Planos
-            </button>
+          <div className="hidden md:flex">
             <button
               onClick={openWhatsAppGeneral}
               className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
@@ -70,6 +88,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6 text-gray-700" />
@@ -81,36 +101,25 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+          <div className="md:hidden bg-white border-t" role="dialog" aria-modal="true">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
+              {navLinks.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => {
-                    onNavigate(item.id);
+                    if (item.action === 'home') {
+                      onNavigate('home');
+                      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                    } else {
+                      scrollToSection(item.id);
+                    }
                     setIsMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors ${
-                    currentPage === item.id
-                      ? 'text-purple-600 bg-purple-50'
-                      : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
-                  }`}
+                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors text-gray-700 hover:text-purple-600 hover:bg-purple-50`}
                 >
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={() => {
-                  const plansSection = document.getElementById('plans');
-                  if (plansSection) {
-                    plansSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  setIsMenuOpen(false);
-                }}
-                className="block bg-purple-100 text-purple-600 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors text-center mt-4 w-full font-medium"
-              >
-                Ver Planos
-              </button>
               <button
                 onClick={openWhatsAppGeneral}
                 className="block bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center mt-2 w-full"

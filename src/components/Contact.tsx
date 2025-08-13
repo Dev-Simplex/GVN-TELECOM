@@ -21,6 +21,7 @@ const Contact: React.FC = () => {
             <button
               onClick={openWhatsAppGeneral}
               className="flex items-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow group w-full text-left border-2 border-green-100 hover:border-green-200"
+              aria-label="Abrir conversa no WhatsApp"
             >
               <div className="bg-green-100 p-4 rounded-full mr-6">
                 <MessageCircle className="h-8 w-8 text-green-600" />
@@ -43,8 +44,8 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Telefone</h4>
-                <p className="text-lg text-gray-600 mb-1">(66) 99718-2800 - Viviane</p>
-                <p className="text-lg text-gray-600 mb-1">(66) 98422-2224 - Edgar</p>
+                <p className="text-lg text-gray-600 mb-1"><a href="tel:+5566997182800" className="hover:text-purple-600">(66) 99718-2800 - Viviane</a></p>
+                <p className="text-lg text-gray-600 mb-1"><a href="tel:+5566984222224" className="hover:text-purple-600">(66) 98422-2224 - Edgar</a></p>
                 <p className="text-sm text-gray-500">Seg a Sex, 8h às 18h</p>
               </div>
             </div>
@@ -56,7 +57,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">E-mail</h4>
-                <p className="text-lg text-gray-600 mb-1">gvntelecomsinop@gmail.com</p>
+                <p className="text-lg text-gray-600 mb-1"><a href="mailto:gvntelecomsinop@gmail.com" className="hover:text-purple-600">gvntelecomsinop@gmail.com</a></p>
                 <p className="text-sm text-gray-500">Resposta em até 24h</p>
               </div>
             </div>

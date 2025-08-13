@@ -25,6 +25,7 @@ const Hero: React.FC = () => {
                 }
               }}
               className="bg-white text-purple-900 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group"
+              aria-label="Ver Planos"
             >
               Ver Planos
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -32,6 +33,7 @@ const Hero: React.FC = () => {
             <button
               onClick={openWhatsAppGeneral}
               className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-purple-900 transition-colors"
+              aria-label="Falar com Especialista no WhatsApp"
             >
               Falar com Especialista
             </button>

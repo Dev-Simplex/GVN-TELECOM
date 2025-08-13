@@ -7,13 +7,15 @@ interface LogoProps {
   showText?: boolean;
   className?: string;
   variant?: 'default' | 'white';
+  loading?: 'eager' | 'lazy';
 }
 
 const Logo: React.FC<LogoProps> = ({ 
   size = 'md', 
   showText = true, 
   className = '',
-  variant = 'default'
+  variant = 'default',
+  loading = 'eager'
 }) => {
   const sizeClasses = {
     sm: 'h-8',
@@ -48,6 +50,7 @@ const Logo: React.FC<LogoProps> = ({
         src={getLogoSrc()} 
         alt="GVN Telecom" 
         className={`${sizeClasses[size]} w-auto object-contain`}
+        loading={loading}
       />
       {showText && (
         <div className="ml-2 flex flex-col">

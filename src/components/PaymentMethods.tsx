@@ -12,13 +12,13 @@ const PaymentMethods: React.FC = () => {
     {
       icon: FileText,
       name: 'Boleto Bancário',
-      description: 'Pagamentos Mensal e com facilidade de entrega do Boleto.',
+      description: 'Pagamento mensal com facilidade de entrega do boleto.',
       color: 'bg-orange-100 text-orange-600'
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="payment" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

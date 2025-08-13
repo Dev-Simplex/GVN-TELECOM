@@ -4,12 +4,12 @@ import Logo from './Logo';
 
 // Função para abrir WhatsApp para número específico
 const openWhatsAppForNumber = (phoneNumber: string, name: string) => {
-  const message = `Olá ${name}! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?`;
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
-  
+  const message = `Olá ${name}! Vi o site e gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso?`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const newWindow = window.open(whatsappUrl, '_blank');
-  if (!newWindow) {
+  if (newWindow) {
+    newWindow.opener = null;
+  } else {
     window.location.href = whatsappUrl;
   }
 };
@@ -46,28 +46,28 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contato</h3>
             <div className="space-y-3">
-              {/* WhatsApp Viviane */}
               <button 
                 onClick={() => openWhatsAppForNumber('5566997182800', 'Viviane')}
                 className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
+                aria-label="Falar no WhatsApp com Viviane"
               >
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp - Viviane
               </button>
               
-              {/* WhatsApp Edgar */}
               <button 
                 onClick={() => openWhatsAppForNumber('5566984222224', 'Edgar')}
                 className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
+                aria-label="Falar no WhatsApp com Edgar"
               >
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp - Edgar
               </button>
               
-              <div className="flex items-center text-gray-400">
+              <a href="mailto:gvntelecomsinop@gmail.com" className="flex items-center text-gray-400 hover:text-purple-400 transition-colors">
                 <Mail className="h-4 w-4 mr-2" />
                 gvntelecomsinop@gmail.com
-              </div>
+              </a>
               
             
               
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400">
-              © 2025 GVN Telecom. Todos os direitos reservados.
+              © {new Date().getFullYear()} GVN Telecom. Todos os direitos reservados.
             </p>
             <p className="text-gray-400">
               Desenvolvido por{' '}

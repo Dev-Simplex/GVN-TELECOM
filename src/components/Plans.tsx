@@ -167,6 +167,7 @@ const Plans: React.FC = () => {
                     ? 'bg-purple-600 text-white hover:bg-purple-700'
                     : 'bg-purple-100 text-purple-600 hover:bg-purple-200'
                 }`}
+                aria-label={`Contratar plano ${plan.name} por R$ ${plan.price} por mês`}
               >
                 Contratar Agora
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

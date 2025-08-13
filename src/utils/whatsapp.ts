@@ -1,17 +1,9 @@
 // Função para obter o próximo número da fila
 const getNextPhoneNumber = () => {
-  // Array com dois números de contato
   const phoneNumbers = ['5566997182800', '5566984222224']; // Viviane, Edgar
-  
-  // Pegar o contador atual do localStorage
   const currentCount = parseInt(localStorage.getItem('whatsappCounter') || '0');
-  
-  // Calcular o próximo índice (0 ou 1)
-  const nextIndex = currentCount % 2;
-  
-  // Incrementar o contador para o próximo usuário
+  const nextIndex = currentCount % phoneNumbers.length;
   localStorage.setItem('whatsappCounter', (currentCount + 1).toString());
-  
   return phoneNumbers[nextIndex];
 };
 
@@ -19,7 +11,7 @@ const getNextPhoneNumber = () => {
 export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: number) => {
   const phoneNumber = getNextPhoneNumber();
   
-  let message = 'Olá! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?';
+  let message = 'Olá! Vi o site e gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso?';
   
   if (planName && planPrice && planLines) {
     // Calcular taxa de adesão baseada no número de linhas
@@ -34,23 +26,22 @@ export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: 
       default: adesao = planPrice * 2;
     }
     
-    message = `- Olá! Vi no site e Gostaria de contratar o plano de ${planLines} Linhas da GVN Telecom.
+    message = `- Olá! Vi o site e gostaria de contratar o plano de ${planLines} linhas da GVN Telecom.
 - ${planLines} linhas SIP
 - R$ ${planPrice}/mês
 - Taxa de adesão: R$ ${adesao}
 
-O que preciso ?`;
+O que preciso?`;
   }
   
-  // Usar uma abordagem mais simples para garantir compatibilidade
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
-  // Abrir em nova aba
   const newWindow = window.open(whatsappUrl, '_blank');
-  
-  // Fallback se popup for bloqueado
-  if (!newWindow) {
+  if (newWindow) {
+    // proteção extra para abas externas
+    newWindow.opener = null;
+  } else {
+    // Fallback se popup for bloqueado
     window.location.href = whatsappUrl;
   }
 };
@@ -59,17 +50,12 @@ O que preciso ?`;
 export const openWhatsAppGeneral = () => {
   const phoneNumber = getNextPhoneNumber();
   
-  const message = 'Olá! Vi no site e Gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso ?';
-  
-  // Usar uma abordagem mais simples para garantir compatibilidade
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
-  
-  // Abrir em nova aba
+  const message = 'Olá! Vi o site e gostaria de saber mais sobre os planos da GVN Telecom.\n\nO que preciso?';
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const newWindow = window.open(whatsappUrl, '_blank');
-  
-  // Fallback se popup for bloqueado
-  if (!newWindow) {
+  if (newWindow) {
+    newWindow.opener = null;
+  } else {
     window.location.href = whatsappUrl;
   }
 };
@@ -91,17 +77,12 @@ export const resetWhatsAppCounter = () => {
 export const openWhatsAppCoverage = () => {
   const phoneNumber = getNextPhoneNumber();
   
-  const message = `Olá! Vi no site e Gostaria de verificar a cobertura da GVN Telecom.\n\nO que preciso ?`;
-  
-  // Usar uma abordagem mais simples para garantir compatibilidade
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
-  
-  // Abrir em nova aba
+  const message = `Olá! Vi o site e gostaria de verificar a cobertura da GVN Telecom.\n\nO que preciso?`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const newWindow = window.open(whatsappUrl, '_blank');
-  
-  // Fallback se popup for bloqueado
-  if (!newWindow) {
+  if (newWindow) {
+    newWindow.opener = null;
+  } else {
     window.location.href = whatsappUrl;
   }
 };

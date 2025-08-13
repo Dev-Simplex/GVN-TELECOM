@@ -23,10 +23,10 @@ function App() {
           <>
             <Hero />
             <Benefits />
-            <Clients />
             <CoverageSection />
             <Plans />
             <PaymentMethods />
+            <Clients />
             <Contact />
             <CTASection />
           </>
