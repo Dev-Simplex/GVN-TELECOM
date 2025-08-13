@@ -68,13 +68,13 @@ const BrazilCoverageMap: React.FC = () => {
 									<Geography
 										key={geo.rsmKey}
 										geography={geo}
-										fill={isUncovered ? '#9ca3af' : '#8b5cf6'}
-										stroke={isUncovered ? '#6b7280' : '#6d28d9'}
+										fill={isUncovered ? '#9ca3af' : '#9333EA'}
+										stroke={isUncovered ? '#6b7280' : '#7E22CE'}
 										strokeWidth={0.6}
 										style={{
 											default: { outline: 'none', cursor: 'default' },
-											hover: { fill: isUncovered ? '#a3a3a3' : '#7c3aed', outline: 'none' },
-											pressed: { fill: isUncovered ? '#a3a3a3' : '#6d28d9', outline: 'none' }
+											hover: { fill: isUncovered ? '#a3a3a3' : '#7E22CE', outline: 'none' },
+											pressed: { fill: isUncovered ? '#a3a3a3' : '#6B21A8', outline: 'none' }
 										}}
                                         onMouseEnter={(e) => {
                                             setHoveredUF(uf);
