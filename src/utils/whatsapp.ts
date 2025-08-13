@@ -1,6 +1,6 @@
 // Função para abrir WhatsApp com mensagem personalizada
 export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: number) => {
-  const phoneNumber = '556684222224'; // Número da GVN Telecom
+  const phoneNumber = '5566984222224'; // Número da GVN Telecom
   
   let message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
   
@@ -28,33 +28,18 @@ export const openWhatsApp = (planName?: string, planPrice?: number, planLines?: 
 Por favor, me envie mais informações sobre o processo de contratação.`;
   }
   
-  // Usar uma abordagem mais simples para garantir compatibilidade
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
-  // Abrir em nova aba
-  const newWindow = window.open(whatsappUrl, '_blank');
-  
-  // Fallback se popup for bloqueado
-  if (!newWindow) {
-    window.location.href = whatsappUrl;
-  }
+  window.open(whatsappUrl, '_blank');
 };
 
 // Função para WhatsApp geral
 export const openWhatsAppGeneral = () => {
-  const phoneNumber = '556684222224'; // Número da GVN Telecom
+  const phoneNumber = '5566984222224'; // Número da GVN Telecom
   const message = 'Olá! Gostaria de saber mais sobre os planos da GVN Telecom.';
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
-  // Usar uma abordagem mais simples para garantir compatibilidade
-  const cleanMessage = message.replace(/\n/g, '%0A').replace(/\s+/g, ' ').trim();
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${cleanMessage}`;
-  
-  // Abrir em nova aba
-  const newWindow = window.open(whatsappUrl, '_blank');
-  
-  // Fallback se popup for bloqueado
-  if (!newWindow) {
-    window.location.href = whatsappUrl;
-  }
+  window.open(whatsappUrl, '_blank');
 };
