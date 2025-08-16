@@ -1,0 +1,144 @@
+import React from 'react';
+import { Phone, Headphones, Building, PhoneCall, Voicemail, Mic, PhoneIncoming } from 'lucide-react';
+
+const Services: React.FC = () => {
+  const services = [
+    {
+      icon: Phone,
+      title: 'Telefonia IP',
+      description: 'Soluções completas de telefonia IP para empresas de todos os tamanhos'
+    },
+    {
+      icon: Headphones,
+      title: 'ATA (Adaptador Telefônico Analógico)',
+      description: 'Adaptadores para conectar telefones analógicos à rede IP'
+    },
+    {
+      icon: PhoneCall,
+      title: 'Ramais',
+      description: 'Ramais virtuais e físicos para sua empresa'
+    },
+    {
+      icon: Building,
+      title: 'PABX IP',
+      description: 'Sistemas de PABX baseados em IP para gestão de chamadas empresariais'
+    },
+    {
+      icon: PhoneIncoming,
+      title: '0800',
+      description: 'Números 0800 para atendimento gratuito aos clientes'
+    },
+    {
+      icon: Voicemail,
+      title: 'URA (Unidade de Resposta Audível)',
+      description: 'Sistemas de atendimento automatizado com menu de opções'
+    },
+    {
+      icon: Mic,
+      title: 'Gravação de Chamadas',
+      description: 'Sistema de gravação de chamadas para controle e qualidade'
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Nossos Serviços
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Atuamos com venda de Telefonia IP, ATA, PABX, Ramal, URA, 0800 e Gravação de Chamadas
+          </p>
+        </div>
+
+                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow group ${
+                index === 6 ? 'md:col-start-2 lg:col-start-2' : ''
+              }`}
+            >
+              <div className="bg-purple-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
+                <service.icon className="h-8 w-8 text-purple-600" />
+              </div>
+              
+              {/* Imagem do produto quando disponível */}
+              {service.title === 'ATA (Adaptador Telefônico Analógico)' && (
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src="/assets/images/ata.png" 
+                    alt="Adaptador Telefônico Analógico Intelbras ATA 200" 
+                    className="h-32 w-auto object-contain"
+                  />
+                </div>
+              )}
+              
+              {service.title === 'Telefonia IP' && (
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src="/assets/images/tip125i.png" 
+                    alt="Telefone IP Intelbras TIP 125i" 
+                    className="h-32 w-auto object-contain"
+                  />
+                </div>
+              )}
+              
+              {service.title === 'Ramais' && (
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src="/assets/images/tip1001d.png" 
+                    alt="Telefone sem fio Intelbras TIP 1001D" 
+                    className="h-32 w-auto object-contain"
+                  />
+                </div>
+              )}
+              
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Soluções Completas para sua Empresa
+            </h3>
+            <p className="text-lg text-gray-600 mb-8">
+              Oferecemos soluções integradas de telefonia IP que se adaptam às necessidades 
+              específicas do seu negócio, desde pequenas empresas até grandes corporações.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div>
+                <h4 className="text-lg font-semibold text-purple-600 mb-3">Vantagens dos Nossos Serviços:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Redução de custos com telefonia</li>
+                  <li>• Flexibilidade e escalabilidade</li>
+                  <li>• Integração com sistemas existentes</li>
+                  <li>• Suporte técnico especializado</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-600 mb-3">Aplicações:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Call Centers</li>
+                  <li>• Escritórios corporativos</li>
+                  <li>• Lojas e comércios</li>
+                  <li>• Clínicas e consultórios</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;
