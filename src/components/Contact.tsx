@@ -47,6 +47,7 @@ const Contact: React.FC = () => {
                 <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Telefone</h4>
                 <p className="text-sm sm:text-lg text-gray-600 mb-1"><a href="tel:+5566997182800" className="hover:text-purple-600">(66) 99718-2800 - Viviane</a></p>
                 <p className="text-sm sm:text-lg text-gray-600 mb-1"><a href="tel:+5566984222224" className="hover:text-purple-600">(66) 98422-2224 - Edgar</a></p>
+                <p className="text-sm sm:text-lg text-gray-600 mb-1"><a href="tel:+556635662423" className="hover:text-purple-600">(66) 3566-2423</a></p>
                 <p className="text-xs sm:text-sm text-gray-500">Seg a Sex, 8h às 18h</p>
               </div>
             </div>
