@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 // Ícone WhatsApp (SVG) - branco
 import whatsappWhite from '/assets/images/whatsapp-svgrepo-branca.svg';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
@@ -117,8 +118,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t" role="dialog" aria-modal="true">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-white border-t shadow-lg" role="dialog" aria-modal="true">
+            <div className="px-4 pt-4 pb-6 space-y-2">
               {navLinks.map((item) => (
                 <button
                   key={item.id}
@@ -133,18 +134,20 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                     }
                     setIsMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-colors text-gray-800 hover:text-purple-700 hover:bg-purple-50`}
+                  className={`block px-4 py-3 text-base font-medium w-full text-left transition-colors text-gray-800 hover:text-purple-700 hover:bg-purple-50 rounded-lg`}
                 >
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={openWhatsAppGeneral}
-                className="block bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center mt-2 w-full inline-flex items-center justify-center"
-              >
-                <FaWhatsapp className="h-4 w-4 mr-2 text-white" />
-                Fale Conosco
-              </button>
+              <div className="pt-2">
+                <button
+                  onClick={openWhatsAppGeneral}
+                  className="block bg-purple-600 text-white px-4 py-3 rounded-lg hover:bg-purple-700 transition-colors text-center w-full inline-flex items-center justify-center font-medium"
+                >
+                  <FaWhatsapp className="h-4 w-4 mr-2 text-white" />
+                  Fale Conosco
+                </button>
+              </div>
             </div>
           </div>
         )}

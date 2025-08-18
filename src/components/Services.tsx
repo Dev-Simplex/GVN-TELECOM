@@ -41,83 +41,83 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nossos Serviços
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Atuamos com venda de Telefonia IP, ATA, PABX, Ramal, URA, 0800 e Gravação de Chamadas
           </p>
         </div>
 
-                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow group ${
-                index === 6 ? 'md:col-start-2 lg:col-start-2' : ''
+              className={`bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow group ${
+                index === 6 ? 'sm:col-start-1 lg:col-start-2' : ''
               }`}
             >
-              <div className="bg-purple-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors">
-                <service.icon className="h-8 w-8 text-purple-600" />
+              <div className="bg-purple-100 p-3 sm:p-4 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-purple-200 transition-colors">
+                <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
               </div>
               
               {/* Imagem do produto quando disponível */}
               {service.title === 'ATA (Adaptador Telefônico Analógico)' && (
-                <div className="mb-6 flex justify-center">
+                <div className="mb-4 sm:mb-6 flex justify-center">
                   <img 
                     src="/assets/images/ata.png" 
                     alt="Adaptador Telefônico Analógico Intelbras ATA 200" 
-                    className="h-32 w-auto object-contain"
+                    className="h-24 sm:h-32 w-auto object-contain"
                   />
                 </div>
               )}
               
               {service.title === 'Telefonia IP' && (
-                <div className="mb-6 flex justify-center">
+                <div className="mb-4 sm:mb-6 flex justify-center">
                   <img 
                     src="/assets/images/tip125i.png" 
                     alt="Telefone IP Intelbras TIP 125i" 
-                    className="h-32 w-auto object-contain"
+                    className="h-24 sm:h-32 w-auto object-contain"
                   />
                 </div>
               )}
               
               {service.title === 'Ramais' && (
-                <div className="mb-6 flex justify-center">
+                <div className="mb-4 sm:mb-6 flex justify-center">
                   <img 
                     src="/assets/images/tip1001d.png" 
                     alt="Telefone sem fio Intelbras TIP 1001D" 
-                    className="h-32 w-auto object-contain"
+                    className="h-24 sm:h-32 w-auto object-contain"
                   />
                 </div>
               )}
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               Soluções Completas para sua Empresa
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
               Oferecemos soluções integradas de telefonia IP que se adaptam às necessidades 
               específicas do seu negócio, desde pequenas empresas até grandes corporações.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               <div>
-                <h4 className="text-lg font-semibold text-purple-600 mb-3">Vantagens dos Nossos Serviços:</h4>
-                <ul className="space-y-2 text-gray-600">
+                <h4 className="text-base sm:text-lg font-semibold text-purple-600 mb-3">Vantagens dos Nossos Serviços:</h4>
+                <ul className="space-y-2 text-sm sm:text-base text-gray-600">
                   <li>• Redução de custos com telefonia</li>
                   <li>• Flexibilidade e escalabilidade</li>
                   <li>• Integração com sistemas existentes</li>
@@ -125,8 +125,8 @@ const Services: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-purple-600 mb-3">Aplicações:</h4>
-                <ul className="space-y-2 text-gray-600">
+                <h4 className="text-base sm:text-lg font-semibold text-purple-600 mb-3">Aplicações:</h4>
+                <ul className="space-y-2 text-sm sm:text-base text-gray-600">
                   <li>• Call Centers</li>
                   <li>• Escritórios corporativos</li>
                   <li>• Lojas e comércios</li>
