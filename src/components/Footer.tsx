@@ -36,10 +36,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Serviços</h3>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-400">
-              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Planos SIP</a></li>
-              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Linhas Adicionais</a></li>
-              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Ramais Extras</a></li>
-              <li><a href="#plans" className="hover:text-purple-400 transition-colors">PABX Adicional</a></li>
+              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Planos Móvel</a></li>
+              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Internet Fibra</a></li>
+              <li><a href="#plans" className="hover:text-purple-400 transition-colors">Telefonia SIP – Fixo</a></li>
+              <li><a href="#plans" className="hover:text-purple-400 transition-colors">PABX IP</a></li>
             </ul>
           </div>
 
@@ -47,6 +47,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Contato</h3>
             <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center text-sm sm:text-base text-gray-400">
+                <span className="mr-2">📞</span>
+                (66) 3566-2423
+              </div>
+              
               <button 
                 onClick={() => openWhatsAppForNumber('5566997182800', 'Viviane')}
                 className="flex items-center text-sm sm:text-base text-gray-400 hover:text-purple-400 transition-colors"

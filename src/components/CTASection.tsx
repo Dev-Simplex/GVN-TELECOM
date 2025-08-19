@@ -12,8 +12,8 @@ const CTASection: React.FC = () => {
             Pronto para Revolucionar sua Comunicação?
           </h2>
           <p className="text-lg sm:text-xl text-purple-100 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-            Junte-se a centenas de empresas em Sinop que já confiam na GVN Telecom 
-            para suas soluções de telefonia SIP. Atendimento personalizado e 
+            Junte-se a centenas de empresas que já confiam na GVN Telecom 
+            para suas soluções de telefonia empresarial. Atendimento personalizado e 
             implementação rápida.
           </p>
         </div>
@@ -34,7 +34,7 @@ const CTASection: React.FC = () => {
             </div>
             <h3 className="text-base sm:text-lg font-semibold mb-2">Suporte Local</h3>
             <p className="text-sm sm:text-base text-purple-200">
-              Atendimento presencial em Sinop - MT com equipe local especializada
+              Atendimento presencial com equipe local especializada
             </p>
           </div>
           <div className="text-center sm:col-span-2 md:col-span-1">

@@ -10,12 +10,11 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-            Telefonia <span className="text-purple-300">SIP</span>
+            Telefonia 
             <br />para sua Empresa
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-            Serviço Global Voz Negócio - Telefonia SIP com ligações ilimitadas, 
-            suporte direto WhatsApp e melhor qualidade de Atendimento
+            Atendemos empresas a mais de 15 anos com Portabilidades, Linhas Novas, Renovações de Planos de todas as operadoras com o menor custo possível.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12">
@@ -26,7 +25,7 @@ const Hero: React.FC = () => {
                   plansSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-white text-purple-900 px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group"
+              className="bg-white text-purple-900 px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               aria-label="Ver Planos"
             >
               Ver Planos
@@ -34,8 +33,8 @@ const Hero: React.FC = () => {
             </button>
             <button
               onClick={openWhatsAppGeneral}
-              className="group border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-white hover:text-purple-900 transition-colors inline-flex items-center justify-center"
-              aria-label="Falar com Especialista no WhatsApp"
+              className="group border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-white hover:text-purple-900 transition-colors inline-flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              aria-label="Abrir WhatsApp – falar com especialista"
             >
               <span className="relative mr-2 h-4 w-4 sm:h-5 sm:w-5">
                 <img src={whatsappWhite} alt="WhatsApp" className="absolute inset-0 h-4 w-4 sm:h-5 sm:w-5 group-hover:hidden" />
@@ -43,6 +42,51 @@ const Hero: React.FC = () => {
               </span>
               Falar com Especialista
             </button>
+          </div>
+
+          {/* Linha de destaques: Móvel | Internet */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {/* Card Móvel */}
+            <div className="rounded-2xl bg-white/10 backdrop-blur-sm p-5 ring-1 ring-white/15">
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Móvel</h3>
+              <ul className="mt-2 space-y-1 text-sm sm:text-base text-purple-100">
+                <li>✔️ Ligações Ilimitadas para todo o Brasil</li>
+                <li>✔️ Whatsapp e Wase sem descontar da Franquia</li>
+                <li>✔ Roaming Internacional</li>
+                <li>✔ SMS ilimitado</li>
+                <li>✔ Pacote de internet móvel Compartilhável</li>
+              </ul>
+              <div className="mt-4">
+                <button
+                  onClick={openWhatsAppGeneral}
+                  className="inline-flex items-center justify-center rounded-lg bg-white text-purple-700 px-4 py-2 text-sm font-semibold hover:bg-purple-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  aria-label="Abrir WhatsApp – ver planos de Móvel"
+                >
+                  Ver planos de Móvel
+                </button>
+              </div>
+            </div>
+
+            {/* Card Internet */}
+            <div className="rounded-2xl bg-white/10 backdrop-blur-sm p-5 ring-1 ring-white/15">
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Internet Fibra</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {['500 MB', '700 MB', '900 MB', '1GB', 'MASCARA DE IP FIXO'].map((label) => (
+                  <span
+                    key={label}
+                    className="inline-flex items-center rounded-lg bg-white/10 px-3 py-1.5 text-xs sm:text-sm font-medium ring-1 ring-white/20 text-white"
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+              <ul className="mt-4 space-y-1 text-sm sm:text-base text-purple-100">
+                <li>✔️ Instalação com modem em comodato</li>
+                <li>✔️ Instalação em média de 3 a 5 dias úteis</li>
+                <li>✔️ Disponível mediante consulta de cobertura rede na cidade</li>
+                <li>✔️ 50% de Banda para Upload e Download</li>
+              </ul>
+            </div>
           </div>
 
           {/* Features */}

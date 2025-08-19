@@ -1,12 +1,28 @@
 import React from 'react';
-import { Phone, Headphones, Building, PhoneCall, Voicemail, Mic, PhoneIncoming } from 'lucide-react';
+import { Phone, Headphones, Building, PhoneCall, Voicemail, Mic, PhoneIncoming, Smartphone, Wifi } from 'lucide-react';
+import { openWhatsAppGeneral } from '../utils/whatsapp';
 
 const Services: React.FC = () => {
   const services = [
     {
+      icon: Smartphone,
+      title: 'Móvel',
+      description: 'Ligações e WhatsApp ilimitados para todo o Brasil com planos a partir de R$ 49,99/mês. Fazemos portabilidades, linhas novas e renovação de planos de todas as operadoras com o menor custo possível.'
+    },
+    {
+      icon: Wifi,
+      title: 'Internet',
+      description: 'Soluções de internet corporativa com alta disponibilidade e suporte especializado'
+    },
+    {
+      icon: Mic,
+      title: 'Gravação de Chamadas',
+      description: 'Sistema de gravação de chamadas para controle e qualidade'
+    },
+    {
       icon: Phone,
-      title: 'Telefonia IP',
-      description: 'Soluções completas de telefonia IP para empresas de todos os tamanhos'
+      title: 'Telefonia SIP – Fixo',
+      description: 'Serviço Global Voz Negócio com ligações ilimitadas para sua empresa'
     },
     {
       icon: Headphones,
@@ -32,11 +48,6 @@ const Services: React.FC = () => {
       icon: Voicemail,
       title: 'URA (Unidade de Resposta Audível)',
       description: 'Sistemas de atendimento automatizado com menu de opções'
-    },
-    {
-      icon: Mic,
-      title: 'Gravação de Chamadas',
-      description: 'Sistema de gravação de chamadas para controle e qualidade'
     }
   ];
 
@@ -45,21 +56,24 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Nossos Serviços
+            Venda de Aparelhos
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Atuamos com venda de Telefonia IP, ATA, PABX, Ramal, URA, 0800 e Gravação de Chamadas
+            Atendemos sua empresa com Telefonia Fixo, Móvel e Internet, além de PABX, Ramais, URA, 0800 e Gravação de Chamadas
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow group ${
-                index === 6 ? 'sm:col-start-1 lg:col-start-2' : ''
-              }`}
-            >
+          {services.map((service, index) => {
+            const isLast = index === services.length - 1;
+            const centerOnLg = services.length % 3 === 1 && isLast; // 1 item sobrando na última linha (3 colunas)
+            return (
+              <div
+                key={index}
+                className={`bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow group ${
+                  centerOnLg ? 'lg:col-start-2' : ''
+                }`}
+              >
               <div className="bg-purple-100 p-3 sm:p-4 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-purple-200 transition-colors">
                 <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
               </div>
@@ -75,7 +89,7 @@ const Services: React.FC = () => {
                 </div>
               )}
               
-              {service.title === 'Telefonia IP' && (
+              {(service.title === 'Telefonia SIP – Fixo' || service.title === 'Telefonia IP') && (
                 <div className="mb-4 sm:mb-6 flex justify-center">
                   <img 
                     src="/assets/images/tip125i.png" 
@@ -101,8 +115,20 @@ const Services: React.FC = () => {
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {service.description}
               </p>
+              {service.title === 'Móvel' && (
+                <div className="mt-4">
+                  <button
+                    onClick={openWhatsAppGeneral}
+                    className="bg-purple-600 text-white px-4 sm:px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base font-semibold"
+                    aria-label="Falar sobre planos Móvel no WhatsApp"
+                  >
+                    Falar no WhatsApp
+                  </button>
+                </div>
+              )}
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-12 sm:mt-16 text-center">
@@ -111,7 +137,7 @@ const Services: React.FC = () => {
               Soluções Completas para sua Empresa
             </h3>
             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-              Oferecemos soluções integradas de telefonia IP que se adaptam às necessidades 
+              Oferecemos soluções integradas que se adaptam às necessidades 
               específicas do seu negócio, desde pequenas empresas até grandes corporações.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">

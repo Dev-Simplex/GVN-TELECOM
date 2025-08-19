@@ -69,7 +69,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
             Sobre a GVN Telecom
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto px-4">
-            Especialistas em telefonia SIP para sua Empresa, oferecendo soluções 
+            Especialistas em telefonia empresarial para sua Empresa, oferecendo soluções 
             completas para empresas com tecnologia de ponta e suporte local.
           </p>
         </div>
@@ -102,8 +102,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
                 Nossa Missão
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
-                Oferecer soluções de telefonia SIP de alta qualidade para empresas 
-                em Sinop e região, com tecnologia avançada e suporte local especializado.
+                Oferecer soluções de telefonia empresarial de alta qualidade para empresas, 
+                com tecnologia avançada e suporte local especializado.
               </p>
               <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
                 Acreditamos que a comunicação eficiente é fundamental para o sucesso 
@@ -115,8 +115,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
                   Por que escolher a GVN Telecom?
                 </h3>
                 <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base text-purple-700">
-                  <li>• Especialistas em telefonia SIP</li>
-                  <li>• Atendimento local em Sinop - MT</li>
+                  <li>• Especialistas em telefonia empresarial</li>
+                  <li>• Atendimento local especializado</li>
                   <li>• Suporte técnico especializado</li>
                   <li>• Preços competitivos e transparentes</li>
                   <li>• Implementação rápida e sem complicações</li>
@@ -203,7 +203,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack }) => {
           </h2>
           <p className="text-lg sm:text-xl text-purple-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Entre em contato conosco e descubra como podemos ajudar sua empresa 
-            com soluções de telefonia SIP para sua Empresa.
+            com soluções de telefonia empresarial para sua Empresa.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button

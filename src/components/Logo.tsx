@@ -58,7 +58,7 @@ const Logo: React.FC<LogoProps> = ({
             GVN Telecom
           </h1>
           <p className={`${subtitleSizes[size]} font-medium leading-tight ${variant === 'white' ? 'text-purple-300' : 'text-purple-600'}`}>
-            Telefonia SIP
+            Telefonia Empresarial
           </p>
         </div>
       )}
