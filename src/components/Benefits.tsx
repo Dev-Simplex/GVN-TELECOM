@@ -80,7 +80,7 @@ const Benefits: React.FC = () => {
         <div className="mt-8 sm:mt-12 text-center">
           <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-6 sm:p-8 text-white">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-              Garantia de Qualidade
+              Telefonia SIP - FIXO
             </h3>
             <p className="text-sm sm:text-lg text-purple-100 mb-4 sm:mb-6">
               Garantia de melhor qualidade de ligação e funcionamento do mercado. 
