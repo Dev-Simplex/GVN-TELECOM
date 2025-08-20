@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, Truck, Car, Wrench, ShoppingBag, MapPin, Package, Hammer, Warehouse, Leaf, BookOpen } from 'lucide-react';
+import { Building, Monitor, Car, Wrench, ShoppingBag, MapPin, Hammer, Warehouse, Leaf, BookOpen } from 'lucide-react';
 
 const Clients: React.FC = () => {
   const clients = [
@@ -34,9 +34,9 @@ const Clients: React.FC = () => {
       category: 'Concessão Rodoviária'
     },
     {
-      name: 'Transportes Martinelli',
-      icon: Truck,
-      category: 'Transporte de Cargas'
+      name: 'SIMPLEX',
+      icon: Monitor,
+      category: 'Tecnologia'
     },
     {
       name: 'Primus Materiais de Construção',
@@ -57,6 +57,31 @@ const Clients: React.FC = () => {
       name: 'Brasil Papelaria',
       icon: BookOpen,
       category: 'Papelaria e Embalagens'
+    },
+    {
+      name: 'Casa do Construtor',
+      icon: Hammer,
+      category: 'Locação de Equipamentos'
+    },
+    {
+      name: 'Inovalab',
+      icon: Building,
+      category: 'Indústria Óptica'
+    },
+    {
+      name: 'Biener Biomassa',
+      icon: Leaf,
+      category: 'Energia Renovável'
+    },
+    {
+      name: 'AGPX Empreendimentos',
+      icon: Building,
+      category: 'Empreendimentos'
+    },
+    {
+      name: 'Canto a Canto Imóveis',
+      icon: Building,
+      category: 'Imobiliária'
     }
   ];
 
