@@ -1,23 +1,13 @@
 import React from 'react';
-import { Phone, Headphones, Building, PhoneCall, Voicemail, Mic, PhoneIncoming, Smartphone, Wifi } from 'lucide-react';
+import { Phone, Headphones, Building, PhoneCall, Voicemail, Mic, PhoneIncoming } from 'lucide-react';
 import { openWhatsAppGeneral } from '../utils/whatsapp';
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: Smartphone,
-      title: 'Móvel',
-      description: 'Ligações e WhatsApp ilimitados para todo o Brasil com planos a partir de R$ 49,99/mês. Fazemos portabilidades, linhas novas e renovação de planos de todas as operadoras com o menor custo possível.'
-    },
-    {
-      icon: Wifi,
-      title: 'Internet',
-      description: 'Soluções de internet corporativa com alta disponibilidade e suporte especializado'
-    },
-    {
-      icon: Mic,
-      title: 'Gravação de Chamadas',
-      description: 'Sistema de gravação de chamadas para controle e qualidade'
+      icon: PhoneCall,
+      title: 'Ramais',
+      description: 'Ramais virtuais e físicos para sua empresa'
     },
     {
       icon: Phone,
@@ -30,9 +20,9 @@ const Services: React.FC = () => {
       description: 'Adaptadores para conectar telefones analógicos à rede IP'
     },
     {
-      icon: PhoneCall,
-      title: 'Ramais',
-      description: 'Ramais virtuais e físicos para sua empresa'
+      icon: Mic,
+      title: 'Gravação de Chamadas',
+      description: 'Sistema de gravação de chamadas para controle e qualidade'
     },
     {
       icon: Building,
@@ -59,7 +49,7 @@ const Services: React.FC = () => {
             Venda de Aparelhos
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Atendemos sua empresa com Telefonia Fixo, Móvel e Internet, além de PABX, Ramais, URA, 0800 e Gravação de Chamadas
+            Atendemos sua empresa com Telefonia Fixo, PABX, Ramais, URA, 0800 e Gravação de Chamadas
           </p>
         </div>
 
@@ -115,17 +105,6 @@ const Services: React.FC = () => {
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-              {service.title === 'Móvel' && (
-                <div className="mt-4">
-                  <button
-                    onClick={openWhatsAppGeneral}
-                    className="bg-purple-600 text-white px-4 sm:px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base font-semibold"
-                    aria-label="Falar sobre planos Móvel no WhatsApp"
-                  >
-                    Falar no WhatsApp
-                  </button>
-                </div>
-              )}
             </div>
             );
           })}
