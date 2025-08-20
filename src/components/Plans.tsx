@@ -198,7 +198,7 @@ const Plans: React.FC = () => {
                 Gravação
               </h4>
               <p className="text-xl sm:text-2xl font-bold text-purple-600 mb-2">
-                R$ 30,00/linha
+                R$ 30,00/mês
               </p>
               <p className="text-sm sm:text-base text-gray-600">
                 Sistema de gravação por linha
