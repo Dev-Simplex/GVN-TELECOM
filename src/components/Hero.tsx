@@ -64,6 +64,10 @@ const Hero: React.FC = () => {
                 >
                   Ver planos de Móvel
                 </button>
+                <div className="mt-3 inline-flex items-center rounded-lg bg-white/10 px-3 py-1.5 text-xs sm:text-sm font-medium ring-1 ring-white/20 text-white">
+                  <span className="mr-1">✓</span>
+                  Planos a partir de R$ 49,99/mês
+                </div>
               </div>
             </div>
 
